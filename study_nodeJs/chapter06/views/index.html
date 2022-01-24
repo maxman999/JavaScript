@@ -1,0 +1,48 @@
+    {% extends 'layout.html' %}
+    
+    {% block content %}
+    <h1> {{title}} </h1>
+    <p> Welcome to {{title}} </p>
+
+    <!-- 변수 선언 -->
+    {% set node = 'Node.Js' %}
+    {% set js = 'JavaScript' %}
+    <p>{{node}}와 {{js}}</p>
+
+    <!-- 반복문  -->
+    <ul>
+    {% set fruits = ['사과', '배', '오렌지', '바나나', '복숭아']  %}
+    {% for item in fruits %}
+        <li> {{loop.index}}번째 {{item}} </li>
+    {% endfor %}
+    </ul>
+
+    <!-- 조건문 -->
+    {% set isLoggedIn = true %}
+    {% if isLoggedIn %}
+    <div>로그인 되었습니다.</div>
+    {% else %}
+    <div>로그인이 필요합니다.</div>
+    {% endif %}
+
+    {% set target = 'you' %}
+    {% if target === 'you' %}
+        <p>너야</p>
+    {% elif target === 'me' %}
+        <p>나야</p>
+    {% else %}
+        <p>누구야?</p>
+    {% endif %}
+
+    <div>{{'참' if isLoggedIn else '거짓'}}</div>
+    <br>
+    <p>-----------------------include--------------------</p>
+    <!-- include -->
+    {% include "header.html" %}
+    <main>
+        <h1>메인 파일</h1>
+        <p> 다른 파일을 include할 수 있습니다. </p>
+    </main>
+    {% include "footer.html" %} 
+    
+    {% endblock %}

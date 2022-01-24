@@ -1,0 +1,11 @@
+{
+  "name": "node-cli",
+  "version": "0.0.1",
+  "description": "",
+  "main": "index.js",
+  "author": "kjy",
+  "license": "ISC",
+  "bin" : {
+    "cli" : "./index.js"
+  }
+}
